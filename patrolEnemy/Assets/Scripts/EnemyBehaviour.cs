@@ -32,6 +32,11 @@ public class EnemyBehaviour : MonoBehaviour
     {
         // for turn
         transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)),transform.localScale.y);
+
+        if (cls.gameObject.CompareTag("Player"))
+        {
+            Destroy(cls.gameObject);
+        }
     }
     private bool IsFaceingRight()
     {
